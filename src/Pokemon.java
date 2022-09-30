@@ -27,8 +27,6 @@ public class Pokemon {
         this.sound = sound;
     }
 
-//    pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound()
-
     public Pokemon(String type, String name, int level, int hp, String food, String sound) {
         this.type = type;
         this.name = name;

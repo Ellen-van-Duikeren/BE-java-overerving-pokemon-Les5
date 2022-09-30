@@ -53,7 +53,7 @@ Gedaan
 Gedaan
 
 Zelf bedacht:
-9. Alle types Pokemons moeten objecten = Pokemons worden ipv Strings; en ik moet Pokemin en Pokemontrainer hier weer op aanpassen
+9. Alle types Pokemons moeten objecten = Pokemons worden ipv Strings; en ik moet Pokemon en Pokemontrainer hier weer op aanpassen
 Gedaan
 
 10. Alle foutmeldingen in main doorlopen en opgelost
@@ -66,29 +66,20 @@ Gedaan
 12. aanvallen nog invullen cf 5
 Gedaan
 
- */
-/*
-Nog doen
-13. als ik main draai: foutmelding oplossen met list pokemons: Exception in thread "main" java.lang.NullPointerException: Cannot invoke "Pokemon.getName()" because "p" is null at PokemonGymImpl.printPokemon(PokemonGymImpl.java:34) at Main.main(Main.java:25). Ik heb hiervoor al 2 waterpokemons geinitieerd, maar dit hielp niet.
-Aangepast in PokemonGymOwner:
+13. extra functies implementeren
+   -done: 'rainDance` heeft geen effect op electric Pokemons maar geeft een `system.out.println` met de boodschap: "has no effect on (vijand)";
+  - done: 'rainDance` levert een hp boost aan vijanden grass-types;
+  - `tunder` levert een hp boost aan electric Pokemons;
+  - `leechSeed` trekt hp van de vijand af en geeft deze hp aan de aanvallende Pokémon terug;
 
-public void setPokemons(List<Pokemon> pokemons) {
-        // zelf toegevoegd nav foutmelding dat lijst pokemons leeg was vanuit main bij de functie printpokemons in gymimpl
-        pokemons.add(raichu);
-        pokemons.add(charizard);
-        pokemons.add(venusaur);
-        pokemons.add(ditto);
-        pokemons.add(blastoise);
-        pokemons.add(gyarados);
-    }
-*/
-/*
-14.nog extra dingen cf 6
-15. Vraag waar declareer ik de types? en is dit nodig? of gebeurt dat al ergens anders
-16. Wat doe ik met de list Pokemons?
-17. variabele village nog toevoegen? = bonus16. in Pokemon: List<String> attacks = Arrays.asList(/*voer de aanvallen hier in); oplossen
-18. opschonen alle constructors die ik niet gebruik
+ Nog doen
+14. checken randvoorwaarden
+15. bonusopdrachten
+17. variabele village nog toevoegen?
+18. opschonen alle constructors, gettersNsetters die ik niet gebruik
+
  */
+
 
 
 

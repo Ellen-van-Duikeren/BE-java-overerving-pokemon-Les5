@@ -59,16 +59,41 @@ public class WaterPokemon extends Pokemon {
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
+    // raindance heeft extra functies
     void rainDance(Pokemon name, Pokemon enemy) {  // water
         int hpMinInAttack = 3;
         String nameAttack = "raindance";
-        templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
+        switch (enemy.getType()) {
+            // extra functie: rainDance` heeft geen effect op electric Pokemons maar geeft een `system.out.println` met de boodschap: "has no effect on (vijand)";
+            case "electric":
+                System.out.println(nameAttack + " has no effect on " + enemy.getName());
+                factor = 0;
+                break;
+            case "fire":
+                factor = 4;
+                break;
+            case "grass":
+                //extra functie: rainDance` levert een hp boost aan vijanden grass-types;
+                factor = 0;
+                enemy.setHp(enemy.getHp() + 20);
+                System.out.println(nameAttack + " gives a hp boost of 20 to grasstypes.");
+                break;
+            case "water":
+                factor = 1;
+                break;
+            default:
+                factor = 1;
+        }
+        minHp = hpMinInAttack * factor;
+        enemy.setHp(enemy.getHp() - (minHp));
+        System.out.println(enemy.getName() + " loses " + minHp + " hp and has now " + enemy.getHp() + "hp.");
     }
 
-    //----- gettersNsetters ---------------------------------------------------------------------------------------
 
-    // 1 getter nl voor attacks
+//----- gettersNsetters ---------------------------------------------------------------------------------------
 
+// 1 getter nl voor attacks
 
     public List<String> getAttacks() {
         return attacks;

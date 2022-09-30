@@ -6,12 +6,12 @@ public class GrassPokemon extends Pokemon {
     private final List<String> attacks = Arrays.asList("leafstorm", "solarbeam", "leechseed", "leaveblade");
 
 
-//----- constructor ----------------------------------------------------------------------------------------------
+    //----- constructor ----------------------------------------------------------------------------------------------
     public GrassPokemon(String name, int level, int hp, String food, String sound) {
         super(type, name, level, hp, food, sound);
     }
 
-//----- methodes ----------------------------------------------------------------------------------------------
+    //----- methodes ----------------------------------------------------------------------------------------------
 // zie bij electricPokemon voor welke manier ik heb gekozen wb hp verliezen
     int factor = 1;  // initiatie factor, verandert per type tegen type
     int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
@@ -51,10 +51,34 @@ public class GrassPokemon extends Pokemon {
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
+    // leechSeed heeft extra functies: 'leechSeed` trekt hp van de vijand af en geeft deze hp aan de aanvallende Pokémon terug;
     public void leechSeed(Pokemon name, Pokemon enemy) {  // grass
         int hpMinInAttack = 2;
         String nameAttack = "leechseed";
-        templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
+
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
+        switch (enemy.getType()) {
+            case "electric":
+                factor = 4;
+                break;
+            case "fire":
+                factor = 3;
+                break;
+            case "grass":
+                factor = 1;
+                break;
+            case "water":
+                factor = 2;
+                break;
+            default:
+                factor = 1;
+        }
+        minHp = hpMinInAttack * factor;
+        enemy.setHp(enemy.getHp() - (minHp));
+        name.setHp(enemy.getHp() + (minHp));
+        System.out.println(enemy.getName() + " loses " + minHp + " hp and has now " + enemy.getHp() + "hp.");
+        System.out.println(name.getName() + " wins " + minHp + " hp and has now " + name.getHp() + "hp.");
+
     }
 
     public void leaveBlade(Pokemon name, Pokemon enemy) {  // grass
