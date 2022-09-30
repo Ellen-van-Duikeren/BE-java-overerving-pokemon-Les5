@@ -1,25 +1,16 @@
 import org.w3c.dom.ls.LSOutput;
-
+import java.util.Arrays;
 import java.util.List;
 
 public class ElectricPokemon extends Pokemon {
-    private Pokemon raichu;
+    private static final String type = "electric";
+    private final List<String> attacks = Arrays.asList("thunderpunch", "electroball", "thunder", "volttackle");
 
 
 //----- constructor ----------------------------------------------------------------------------------------------
 
     public ElectricPokemon(String name, int level, int hp, String food, String sound) {
-        super(name, level, hp, food, sound);
-    }
-
-    public ElectricPokemon(String type, List<String> attacks, String name, int level, int hp, String food, String sound, Pokemon raichu) {
-        super(type, attacks, name, level, hp, food, sound);
-        this.raichu = raichu;
-    }
-
-    public ElectricPokemon(String type, List<String> attacks, String name, int level, int hp, String food, String sound, List<Pokemon> pokemons, Pokemon raichu) {
-        super(type, attacks, name, level, hp, food, sound, pokemons);
-        this.raichu = raichu;
+        super(type, name, level, hp, food, sound);
     }
 
 
@@ -42,9 +33,12 @@ public class ElectricPokemon extends Pokemon {
     int factor = 1;  // initiatie factor, verandert per type tegen type
     int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
 
+
+
+
     // onderstaande methode is een methode die ik in elk van de lectricPokemons toepas. Deze is weer anders voor de WaterPokemon enz omdat de factor anders is.
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan met " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 1;
@@ -95,11 +89,10 @@ public class ElectricPokemon extends Pokemon {
     }
 
     //----- gettersNsetters ---------------------------------------------------------------------------------------
-    public Pokemon getRaichu() {
-        return raichu;
-    }
+// 1 getter nl voor attacks
 
-    public void setRaichu(Pokemon raichu) {
-        this.raichu = raichu;
+
+    public List<String> getAttacks() {
+        return attacks;
     }
 }

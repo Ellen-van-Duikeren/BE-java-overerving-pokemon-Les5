@@ -18,8 +18,8 @@ public class Main {
         names.add(player1.getRaichu());
         names.add(player1.getVenusaur());
         player1.setPokemons(names);
-        System.out.println("To start your game, we have given you 6 Pokemons use");
-        System.out.println("this are the Pokemons you get:");
+        System.out.println("To start your game, we have given you 6 Pokemons you can use");
+        System.out.println("these are the Pokemons you get:");
         pokemonGym.printPokemon(names);
         System.out.println("Would you like to enter a gym looking for a fight?");
         System.out.println("Please enter yes or no");
@@ -27,7 +27,18 @@ public class Main {
             pokemonGym.enteredTheGym(player1);
         }
 
+//void printPokemon(List<Pokemon> pokemons);
+//Pokemon selectPokemon(String pokemon, PokemonTrainer trainer);
+//void fightRound(PokemonTrainer trainer, PokemonGymOwner owner, Pokemon pokemon, Pokemon gymPokemon);
+//Pokemon chooseGymPokemon(PokemonGymOwner gymOwner);
+//Pokemon choosePokemon(PokemonTrainer trainer);
+//int randomAttackByGymOwner();
+//String chooseAttackPlayer(Pokemon p);
+//void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack);
+//void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon);
+//void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym);
+
+
     }
-
-
 }
+

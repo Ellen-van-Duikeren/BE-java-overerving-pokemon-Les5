@@ -4,13 +4,12 @@ import java.util.List;
 
 public class Pokemon {
     // deze variabelen meerdere keren voor
-    String type; /*""*/
-    List<String> attacks = Arrays.asList("surf", "fireLash", "leafStorm", "hydroPump", "thunderPunch", "electroBall", "solarBeam", "flameThrower", "hydroCanon", "pyroBall", "thunder", "rainDance", "leechSeed", "leaveBlade", "inferno", "voltTackle");  // hier stond voer de aanvallen hier in
-    String name;/*""*/
+    private final String type; /*""*/
+    private final String name;/*""*/
     int level;
     int hp;
-    String food;/*""*/
-    String sound;/*""*/
+    private final String food;/*""*/
+    private final String sound;/*""*/
     List<Pokemon> pokemons;
     Pokemon raichu;/*⚡*/
     Pokemon charizard;/*🔥*/
@@ -21,79 +20,38 @@ public class Pokemon {
 
     //----- constructor ----------------------------------------------------------------------------------------------
 
-
-    public Pokemon(List<Pokemon> pokemons) {
-        // onderstaande zelf toegevoegd! > werkt niet
-        pokemons.add(getBlastoise());
-        pokemons.add(getGyarados());
-        pokemons.add(getVenusaur());
-        pokemons.add(getDitto());
-        pokemons.add(getCharizard());
-        pokemons.add(getRaichu());
-    }
-
-    public Pokemon(String name, int level, int hp, String food, String sound) {
-        this.name = name;
-        this.level = level;
-        this.hp = hp;
-        this.food = food;
-        this.sound = sound;
-    }
-
-    public Pokemon(String type, List<String> attacks, String name, int level, int hp, String food, String sound) {
+    public Pokemon(String type, String name, String food, String sound) {
         this.type = type;
-        this.attacks = attacks;
         this.name = name;
-        this.level = level;
-        this.hp = hp;
         this.food = food;
         this.sound = sound;
     }
 
-    public Pokemon(String type, List<String> attacks, String name, int level, int hp, String food, String sound, List<Pokemon> pokemons) {
+//    pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound()
+
+    public Pokemon(String type, String name, int level, int hp, String food, String sound) {
         this.type = type;
-        this.attacks = attacks;
         this.name = name;
         this.level = level;
         this.hp = hp;
         this.food = food;
         this.sound = sound;
-        this.pokemons = pokemons;
     }
 
 
     //----- methodes ----------------------------------------------------------------------------------------------
 
-    /*deze methode komt op meerdere plaatsen terug*/
-    List<String> getAttacks() {
-        return attacks;
-    }
 
-    public List<Pokemon> getPokemonList() {
-        return Arrays.asList(getCharizard(), getBlastoise(), getDitto(), getGyarados(), getRaichu(), getVenusaur());
-    }
+
 
 //----- gettersNsetters ---------------------------------------------------------------------------------------
-
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setAttacks(List<String> attacks) {
-        this.attacks = attacks;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getLevel() {
@@ -116,16 +74,8 @@ public class Pokemon {
         return food;
     }
 
-    public void setFood(String food) {
-        this.food = food;
-    }
-
     public String getSound() {
         return sound;
-    }
-
-    public void setSound(String sound) {
-        this.sound = sound;
     }
 
     public List<Pokemon> getPokemons() {
@@ -183,5 +133,4 @@ public class Pokemon {
     public void setGyarados(Pokemon gyarados) {
         this.gyarados = gyarados;
     }
-
 }
