@@ -19,7 +19,7 @@ public class WaterPokemon extends Pokemon {
     int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
 
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name.getName() + " valt " + enemy.getName() + " aan met " + nameAttack + ".");
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 3;
@@ -44,28 +44,24 @@ public class WaterPokemon extends Pokemon {
     void surf(Pokemon name, Pokemon enemy) { // water
         int hpMinInAttack = 1;
         String nameAttack = "surf";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void hydroPump(Pokemon name, Pokemon enemy) {  // water
         int hpMinInAttack = 2;
         String nameAttack = "hydropump";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void hydroCanon(Pokemon name, Pokemon enemy) { // water
         int hpMinInAttack = 2;
         String nameAttack = "hydrocanon";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void rainDance(Pokemon name, Pokemon enemy) {  // water
         int hpMinInAttack = 3;
         String nameAttack = "raindance";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 

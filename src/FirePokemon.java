@@ -20,7 +20,7 @@ public class FirePokemon extends Pokemon {
     int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
 
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name.getName() + " valt " + enemy.getName() + " aan met " + nameAttack + ".");
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 2;
@@ -46,28 +46,24 @@ public class FirePokemon extends Pokemon {
     void fireLash(Pokemon name, Pokemon enemy) { //fire
         int hpMinInAttack = 1;
         String nameAttack = "firelash";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void flameThrower(Pokemon name, Pokemon enemy) {  // fire
         int hpMinInAttack = 2;
         String nameAttack = "flamethrower";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void pyroBall(Pokemon name, Pokemon enemy) {  // fire
         int hpMinInAttack = 2;
         String nameAttack = "pyroball";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void inferno(Pokemon name, Pokemon enemy) {  // fire
         int hpMinInAttack = 3;
         String nameAttack = "inferno";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 

@@ -36,9 +36,9 @@ public class ElectricPokemon extends Pokemon {
 
 
 
-    // onderstaande methode is een methode die ik in elk van de lectricPokemons toepas. Deze is weer anders voor de WaterPokemon enz omdat de factor anders is.
+    // onderstaande methode is een methode die ik in elk van de electricPokemons toepas. Deze is weer anders voor de WaterPokemon enz omdat de factor anders is.
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name.getName() + " valt " + enemy.getName() + " aan met " + nameAttack + ".");
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 1;
@@ -63,28 +63,24 @@ public class ElectricPokemon extends Pokemon {
     void thunderPunch(Pokemon name, Pokemon enemy) { // electric
         int hpMinInAttack = 1;
         String nameAttack = "thunderpunch";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void electroBall(Pokemon name, Pokemon enemy) { // electric
         int hpMinInAttack = 2;
         String nameAttack = "electroBall";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void thunder(Pokemon name, Pokemon enemy) { // electric
         int hpMinInAttack = 2;
         String nameAttack = "thunder";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     void voltTackle(Pokemon name, Pokemon enemy) {  // electric
         int hpMinInAttack = 3;
         String nameAttack = "voltTackle";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 

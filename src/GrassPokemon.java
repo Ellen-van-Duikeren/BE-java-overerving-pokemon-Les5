@@ -17,7 +17,7 @@ public class GrassPokemon extends Pokemon {
     int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
 
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name.getName() + " valt " + enemy.getName() + " aan met " + nameAttack + ".");
+        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 4;
@@ -42,28 +42,24 @@ public class GrassPokemon extends Pokemon {
     public void leafStorm(Pokemon name, Pokemon enemy) { // grass
         int hpMinInAttack = 1;
         String nameAttack = "leafstorm";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     public void solarBeam(Pokemon name, Pokemon enemy) {  // grass
         int hpMinInAttack = 2;
         String nameAttack = "solarbeam";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     public void leechSeed(Pokemon name, Pokemon enemy) {  // grass
         int hpMinInAttack = 2;
         String nameAttack = "leechseed";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
     public void leaveBlade(Pokemon name, Pokemon enemy) {  // grass
         int hpMinInAttack = 3;
         String nameAttack = "leaveblade";
-        System.out.println(name + " valt " + enemy + " aan, met " + nameAttack + ".");
         templateAttackMethod(name, enemy, nameAttack, hpMinInAttack);
     }
 
