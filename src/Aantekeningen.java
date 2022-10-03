@@ -71,12 +71,13 @@ Gedaan
   - done: 'rainDance` levert een hp boost aan vijanden grass-types;
   - `tunder` levert een hp boost aan electric Pokemons;
   - `leechSeed` trekt hp van de vijand af en geeft deze hp aan de aanvallende Pokémon terug;
+14. checken randvoorwaarden
 
  Nog doen
-14. checken randvoorwaarden
 15. bonusopdrachten
 17. variabele village nog toevoegen?
 18. opschonen alle constructors, gettersNsetters die ik niet gebruik
+
 
  */
 

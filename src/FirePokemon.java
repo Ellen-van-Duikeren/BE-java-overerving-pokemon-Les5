@@ -14,13 +14,8 @@ public class FirePokemon extends Pokemon {
 
 
 //----- methodes ----------------------------------------------------------------------------------------------
-    // zie bij electricPokemon voor welke manier ik heb gekozen wb hp verliezen
-
-    int factor = 1;  // initiatie factor, verandert per type tegen type
-    int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
-
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
+        System.out.println(name.getName() + " attacks " + enemy.getName() + ", with " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 2;
@@ -41,7 +36,6 @@ public class FirePokemon extends Pokemon {
         enemy.setHp(enemy.getHp() - (minHp));
         System.out.println(enemy.getName() + " loses " + minHp + " hp and has now " + enemy.getHp() + "hp.");
     }
-
 
     void fireLash(Pokemon name, Pokemon enemy) { //fire
         int hpMinInAttack = 1;
@@ -69,9 +63,6 @@ public class FirePokemon extends Pokemon {
 
 
 //----- gettersNsetters ---------------------------------------------------------------------------------------
-// 1 getter nl voor attacks
-
-
     public List<String> getAttacks() {
         return attacks;
     }

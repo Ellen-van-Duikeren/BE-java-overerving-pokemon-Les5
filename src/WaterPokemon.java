@@ -6,20 +6,15 @@ public class WaterPokemon extends Pokemon {
     private final List<String> attacks = Arrays.asList("surf", "hydropump", "Hydrocanon", "raindance");
 
 
-    //----- constructor ----------------------------------------------------------------------------------------------
-
+//----- constructor ----------------------------------------------------------------------------------------------
 
     public WaterPokemon(String name, int level, int hp, String food, String sound) {
         super(type, name, level, hp, food, sound);
     }
 
-    //----- methodes ----------------------------------------------------------------------------------------------
-    // zie bij electricPokemon voor welke manier ik heb gekozen wb hp verliezen
-    int factor = 1;  // initiatie factor, verandert per type tegen type
-    int minHp = 0;  // initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
-
+//----- methodes ----------------------------------------------------------------------------------------------
     public void templateAttackMethod(Pokemon name, Pokemon enemy, String nameAttack, int hpMinInAttack) {
-        System.out.println(name.getName() + " valt " + enemy.getName() + " aan, met " + nameAttack + ".");
+        System.out.println(name.getName() + " attacks " + enemy.getName() + ", with " + nameAttack + ".");
         switch (enemy.getType()) {
             case "electric":
                 factor = 3;
@@ -92,9 +87,6 @@ public class WaterPokemon extends Pokemon {
 
 
 //----- gettersNsetters ---------------------------------------------------------------------------------------
-
-// 1 getter nl voor attacks
-
     public List<String> getAttacks() {
         return attacks;
     }

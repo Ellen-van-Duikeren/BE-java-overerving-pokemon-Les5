@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.DoubleToIntFunction;
 
 public class Pokemon {
     // deze variabelen meerdere keren voor
@@ -11,14 +12,18 @@ public class Pokemon {
     private final String food;/*""*/
     private final String sound;/*""*/
     List<Pokemon> pokemons;
-    Pokemon raichu;/*⚡*/
-    Pokemon charizard;/*🔥*/
-    Pokemon venusaur;/*🌿*/
-    Pokemon ditto;/*🌿*/
-    Pokemon blastoise;/*🌊*/
-    Pokemon gyarados;/*🌊*/
+    private Pokemon raichu;/*⚡*/
+    private Pokemon charizard;/*🔥*/
+    private Pokemon venusaur;/*🌿*/
+    private Pokemon ditto;/*🌿*/
+    private Pokemon blastoise;/*🌊*/
+    private Pokemon gyarados;/*🌊*/
 
-    //----- constructor ----------------------------------------------------------------------------------------------
+    int factor = 1;  // wordt gebruikt in de attacks, initiatie factor, verandert per type tegen type
+    int minHp = 0;  // wordt gebruikt in de attacks, initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor
+
+
+// constructor ----------------------------------------------------------------------------------------------
 
     public Pokemon(String type, String name, String food, String sound) {
         this.type = type;
@@ -37,13 +42,9 @@ public class Pokemon {
     }
 
 
-    //----- methodes ----------------------------------------------------------------------------------------------
-
-
-
+//----- methodes ----------------------------------------------------------------------------------------------
 
 //----- gettersNsetters ---------------------------------------------------------------------------------------
-
     public String getType() {
         return type;
     }
@@ -54,10 +55,6 @@ public class Pokemon {
 
     public int getLevel() {
         return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public int getHp() {
@@ -82,53 +79,5 @@ public class Pokemon {
 
     public void setPokemons(List<Pokemon> pokemons) {
         this.pokemons = pokemons;
-    }
-
-    public Pokemon getRaichu() {
-        return raichu;
-    }
-
-    public void setRaichu(Pokemon raichu) {
-        this.raichu = raichu;
-    }
-
-    public Pokemon getCharizard() {
-        return charizard;
-    }
-
-    public void setCharizard(Pokemon charizard) {
-        this.charizard = charizard;
-    }
-
-    public Pokemon getVenusaur() {
-        return venusaur;
-    }
-
-    public void setVenusaur(Pokemon venusaur) {
-        this.venusaur = venusaur;
-    }
-
-    public Pokemon getDitto() {
-        return ditto;
-    }
-
-    public void setDitto(Pokemon ditto) {
-        this.ditto = ditto;
-    }
-
-    public Pokemon getBlastoise() {
-        return blastoise;
-    }
-
-    public void setBlastoise(Pokemon blastoise) {
-        this.blastoise = blastoise;
-    }
-
-    public Pokemon getGyarados() {
-        return gyarados;
-    }
-
-    public void setGyarados(Pokemon gyarados) {
-        this.gyarados = gyarados;
     }
 }

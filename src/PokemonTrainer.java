@@ -12,14 +12,11 @@ public class PokemonTrainer {
     WaterPokemon blastoise = new WaterPokemon("Blastoise", 20, 70, "hurricanes", "whoosh");/*🌊*/
     WaterPokemon gyarados = new WaterPokemon("Gyarados", 30, 89, "cyclons", "what?");/*🌊*/
 
-
-    // hier lijst laten staan volgens les en in gymOwner
     public List<Pokemon> getPokemonList() {
         return Arrays.asList(getCharizard(), getBlastoise(), getDitto(), getGyarados(), getRaichu(), getVenusaur());
     }
 
-    //----- constructor -------------------------------------------------------------------------------------------
-
+//----- constructor -------------------------------------------------------------------------------------------
     public PokemonTrainer(String name) {
         this.name = name;
     }
@@ -38,7 +35,6 @@ public class PokemonTrainer {
 //----- methodes ----------------------------------------------------------------------------------------------
 
 //----- gettersNsetters ---------------------------------------------------------------------------------------
-
 
     public String getName() {
         return name;

@@ -1,6 +1,8 @@
 import java.util.*;
 
 public class PokemonGymImpl implements PokemonGym {
+    boolean goOn = true;
+
 
     @Override
     public void enteredTheGym(PokemonTrainer player1) {
@@ -58,27 +60,28 @@ public class PokemonGymImpl implements PokemonGym {
             attackOrChange(pokemon, gymPokemon, trainer, owner);
 
         }
-        if(pokemon.getHp() <= 0){
+        if (pokemon.getHp() <= 0) {
             System.out.println(gymPokemon.getName() + " has defeated " + pokemon.getName());
-        } else if (gymPokemon.getHp() <= 0){
+        } else if (gymPokemon.getHp() <= 0) {
             System.out.println(pokemon.getName() + " has defeated " + gymPokemon.getName());
         }
 
         System.out.println("Would you like to keep playing? yes or no");
         String keepPlaying = speler_A.nextLine();
-        if (keepPlaying.equals("yes")){
+        if (keepPlaying.equals("yes")) {
             enteredTheGym(trainer);
         } else {
             System.out.println("Thank you for playing");
         }
     }
 
+
     @Override
-    public Pokemon chooseGymPokemon(PokemonGymOwner gymOwner){
+    public Pokemon chooseGymPokemon(PokemonGymOwner gymOwner) {
         Random rand = new Random();
         List<Pokemon> pokemons = new ArrayList<>();
         for (Pokemon p : gymOwner.getPokemons()) {
-            if(p.getHp() > 0 ){
+            if (p.getHp() > 0) {
                 pokemons.add(p);
             }
         }
@@ -88,11 +91,11 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public Pokemon choosePokemon(PokemonTrainer trainer){
+    public Pokemon choosePokemon(PokemonTrainer trainer) {
         Scanner speler_A = new Scanner(System.in);
         List<Pokemon> pokemons = new ArrayList<>();
         for (Pokemon p : trainer.getPokemons()) {
-            if(p.getHp() > 0 ){
+            if (p.getHp() > 0) {
                 pokemons.add(p);
             }
         }
@@ -105,14 +108,14 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public int randomAttackByGymOwner(){
+    public int randomAttackByGymOwner() {
         Random rand = new Random();
         int maxAttacks = 4;
         return rand.nextInt(maxAttacks);
     }
 
     @Override
-    public String chooseAttackPlayer(Pokemon p){
+    public String chooseAttackPlayer(Pokemon p) {
         Scanner speler_A = new Scanner(System.in);
         String type = p.getType();
         switch (type) {
@@ -144,7 +147,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack){
+    public void performAttackPlayer(Pokemon pokemon, Pokemon gymPokemon, String attack) {
         FirePokemon fire;
         ElectricPokemon electric;
         GrassPokemon grass;
@@ -193,7 +196,7 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon){
+    public void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon) {
         FirePokemon fire;
         ElectricPokemon electric;
         GrassPokemon grass;
@@ -243,21 +246,39 @@ public class PokemonGymImpl implements PokemonGym {
         }
     }
 
+    // Bonusopdrachten: Voeg de variabele ‘food’ met het juiste datatype toe aan de juiste klasse(n). Voeg ook een methode toe waarbij de hp van de Pokémon een boost krijgt wanneer hij gevoerd wordt.
+    public void foodForBoost(Pokemon pokemon) {
+        System.out.println("What food would you like to give?");
+        Scanner foodPokemon = new Scanner(System.in);
+        String PokemonFood = foodPokemon.nextLine().toLowerCase();
+        if (PokemonFood.equals(pokemon.getFood())) {
+            pokemon.setHp(pokemon.getHp() + 20);
+            System.out.println("Because you have feeded your pokemon, it has now " + pokemon.getHp() + "hp.");
+        } else {
+            System.out.println("Your Pokemon does not eat that kind of stuff");
+        }
+    }
+
+// Bonusopdracht 2: Pas het spel aan zodat je het pokémonvoedsel naar de Pokémon gooit voor een aanval, in plaats van een aanval doet. Als dit voedsel het juiste type is voor dit type Pokémon, zal het de Pokémon een boost geven.
     @Override
-    public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym){
+    public void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym) {
         Scanner speler_A = new Scanner(System.in);
 
-        System.out.println("Do you want to attack or change your pokemon?");
-        System.out.println("Type a for attack or c for change");
-        String choice = speler_A.nextLine();
+        System.out.println("Do you want to attack your pokemon, change your pokemon or feed your pokemon?");
+        System.out.println("Type a for attack, c for change or f for feed.");
+        String choice = speler_A.nextLine().toLowerCase();
 
         if (choice.equalsIgnoreCase("a")) {
             String attack = chooseAttackPlayer(pokemon);
             performAttackPlayer(pokemon, gymPokemon, attack);
-        } else {
+        } else if (choice.equalsIgnoreCase("c")) {
             pokemon = choosePokemon(trainer);
             attackOrChange(pokemon, gymPokemon, trainer, gym);
             fightRound(trainer, gym, pokemon, gymPokemon);
+        } else if (choice.equalsIgnoreCase("f")) {
+            foodForBoost(pokemon);
+        } else {
+            System.out.println("Invalid input");
         }
     }
 }
