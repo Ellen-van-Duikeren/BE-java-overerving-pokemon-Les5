@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class PokemonGymImpl implements PokemonGym {
-    boolean goOn = true;
-
 
     @Override
     public void enteredTheGym(PokemonTrainer player1) {

@@ -12,12 +12,6 @@ public class Pokemon {
     private final String food;/*""*/
     private final String sound;/*""*/
     List<Pokemon> pokemons;
-    private Pokemon raichu;/*⚡*/
-    private Pokemon charizard;/*🔥*/
-    private Pokemon venusaur;/*🌿*/
-    private Pokemon ditto;/*🌿*/
-    private Pokemon blastoise;/*🌊*/
-    private Pokemon gyarados;/*🌊*/
 
     int factor = 1;  // wordt gebruikt in de attacks, initiatie factor, verandert per type tegen type
     int minHp = 0;  // wordt gebruikt in de attacks, initiatie minHp, is totaal aantal min punten na berekening hpMinInAttack * factor

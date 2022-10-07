@@ -21,16 +21,6 @@ public class PokemonTrainer {
         this.name = name;
     }
 
-    public PokemonTrainer(String name, ElectricPokemon raichu, GrassPokemon venusaur, GrassPokemon ditto, FirePokemon charizard, WaterPokemon blastoise, WaterPokemon gyarados) {
-        this.name = name;
-        this.raichu = raichu;
-        this.venusaur = venusaur;
-        this.ditto = ditto;
-        this.charizard = charizard;
-        this.blastoise = blastoise;
-        this.gyarados = gyarados;
-    }
-
 
 //----- methodes ----------------------------------------------------------------------------------------------
 

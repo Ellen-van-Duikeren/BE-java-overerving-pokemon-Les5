@@ -13,11 +13,6 @@ public class PokemonGymOwner extends PokemonTrainer {
         this.name = name;
     }
 
-    public PokemonGymOwner(String name, ElectricPokemon raichu, GrassPokemon venusaur, GrassPokemon ditto, FirePokemon charizard, WaterPokemon blastoise, WaterPokemon gyarados) {
-        super(name, raichu, venusaur, ditto, charizard, blastoise, gyarados);
-        this.name = name;
-    }
-
 //----- methodes ----------------------------------------------------------------------------------------------
 
 //----- gettersNsetters ---------------------------------------------------------------------------------------
