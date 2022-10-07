@@ -18,16 +18,14 @@ public class Main {
         names.add(player1.getRaichu());
         names.add(player1.getVenusaur());
         player1.setPokemons(names);
-        System.out.println("To start your game, we have given you 6 Pokemons use");
-        System.out.println("this are the Pokemons you get:");
+        System.out.println("To start your game, we have given you 6 Pokemons you can use");
+        System.out.println("these are the Pokemons you get:");
         pokemonGym.printPokemon(names);
         System.out.println("Would you like to enter a gym looking for a fight?");
         System.out.println("Please enter yes or no");
         if (speler_A.nextLine().equals("yes")) {
             pokemonGym.enteredTheGym(player1);
         }
-
     }
-
-
 }
+
